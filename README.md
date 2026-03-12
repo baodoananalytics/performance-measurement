@@ -1,2 +1,57 @@
-# performance-measurement
-Automated portfolio performance measurement
+# Automated Portfolio Performance Measurement Report
+Automated Portfolio Performance Measurement Report conducted by the combinations of Python and Excel.
+
+# Overview
+Developed an automated news aggregation workflow to provide daily updates on the Vietnamese Real Estate and Construction Materials sectors. The pipeline utilizes Requests and BeautifulSoup for web scraping (source, title, URL, summary), Pandas for structured data management in Excel, and Power Automate to trigger automated delivery to chatbox platforms.
+
+# Technologies Used
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+
+# Data Overview
+The pipeline aggregates high-quality market intelligence from Vietnam’s most prestigious financial and real estate e-magazines, including CafeF.vn, Vietstock.vn, and Batdongsan.com.vn.
+
+1. **Comprehensive Metadata Extraction:**
+For every captured article, the workflow extracts a structured dataset to ensure full traceability:
+    * Source Attribution: Originating publisher.
+    * Metadata: Article Title and a concise Summary.
+    * Direct Access: Original Source URL for deep-dive reading.
+    * Temporal Tracking: Exact Published Time to maintain chronological relevance.
+
+2. **Intelligent Keyword-based Filtering:**
+To maintain the news content exactly, the script implements a strict Boolean filtering logic. An article is only processed if its title contains at least one industry-specific keyword:
+    * Real Estate Sector: Targeted via terms such as "Nhà ở" (Housing), "Dự án" (Projects).
+    * Construction Materials: Filtered by strategic keywords like "Thép" (Steel) and "Vật liệu xây dựng" (Construction Materials).
+
+# Project Structure
+``` text
+├── data/
+│   ├── Portfolio_Raw.xlsx
+│   ├── Portfolio_Raw.xlsx
+├── code/
+│   └── main.py
+│   └── hardcode.py
+├── demo/
+│   ├── notifications_screenshot.png
+├── LICENSE
+└── README.md                    # Project documentation
+```
+
+# Project Steps
+1. Automated Data Extraction (Web Scraping)
+    * Hardcoded target sources name, URLs, industry-specific keywords and storage filepath.
+    * Used requests and Beautifulsoup to extract artile title, summary and URLs. 
+3. Data Storage:
+    * Utilized Pandas to transform raw scraped data into a structured Excel-based database.
+    * Removed duplicated to prevent redundant information base on news title.
+4. Data Sending to chatbox:
+    * Implementing Power Automate to send news periodically (9a.m and 3p.m every work day).
+    * Labelled "Alerted" for tracking status and ensuring no duplicate notifications.
+
+---
+# Scale up
+This project featured a highly flexible design. By simply updating the parameters such as keywords. sources and URLs in the hardcode.py module, we will have other industry-specific news with minimal efforts.
+
+# Author
+*  [Linkedin](https://www.linkedin.com/in/bao-doan-833a6615a/)
