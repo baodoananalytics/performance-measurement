@@ -50,7 +50,7 @@ The whole process only uses the raw data in `Portfolio_raw.xlsx`, which contains
 
 ---
 # Scale up
-This project featured a highly flexible design. By simply updating the parameters such as keywords. sources and URLs in the hardcode.py module, we will have other industry-specific news with minimal efforts.
+This project features a highly flexible design. By simply changing the reporting month input (e.g., `2025-11` or `2025-09`), users can instantly generate the report for the selected month.
 
 # Author
 *  [Linkedin](https://www.linkedin.com/in/bao-doan-833a6615a/)
