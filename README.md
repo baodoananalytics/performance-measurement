@@ -10,6 +10,8 @@ This project supports the investment advisory team in generating timely, automat
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
 # Data Overview
+The pipeline begins with reading raw data in `Portfolio_Raw.xlsx`, which contains daily recommendations in "port" sheet and VNINDEX's daily-closed point. Pandas package is used to read data, calculate each recommendation's return then aggregate to the monthly performance compared to the benchmark VNINDEX in monthly and year-to-date basis. The volatility of performance in report month and Top 5 outstanding stocks are also highlighted. Then some data-manipulation functions such as OFFSET, INDEX, MATCH are used to show key metrics on Report Page. Finally, the Report Page is well-design to readily generate to a final report in pdf format.
+
 The pipeline aggregates high-quality market intelligence from Vietnam’s most prestigious financial and real estate e-magazines, including CafeF.vn, Vietstock.vn, and Batdongsan.com.vn.
 
 1. **Comprehensive Metadata Extraction:**
@@ -39,15 +41,13 @@ To maintain the news content exactly, the script implements a strict Boolean fil
 ```
 
 # Project Steps
-1. Automated Data Extraction (Web Scraping)
-    * Hardcoded target sources name, URLs, industry-specific keywords and storage filepath.
-    * Used requests and Beautifulsoup to extract artile title, summary and URLs. 
-3. Data Storage:
-    * Utilized Pandas to transform raw scraped data into a structured Excel-based database.
-    * Removed duplicated to prevent redundant information base on news title.
-4. Data Sending to chatbox:
-    * Implementing Power Automate to send news periodically (9a.m and 3p.m every work day).
-    * Labelled "Alerted" for tracking status and ensuring no duplicate notifications.
+1. The pipeline starts with extracting raw data from Portfolio_Raw.xlsx, including daily stock recommendations in the port sheet and the daily closing level of VNINDEX.
+  
+2. Python pandas is used to calculate individual recommendation returns and consolidate them into monthly and year-to-date portfolio performance versus the VNINDEX benchmark. The output also captures monthly performance volatility and the top 5 outperforming stocks.
+  
+3. Key metrics are then displayed dynamically on the Report Page using Excel functions such as OFFSET, INDEX, and MATCH.
+  
+4. The final Report Page is fully formatted and ready for PDF export.
 
 ---
 # Scale up
