@@ -10,22 +10,21 @@ This project supports the investment advisory team in generating timely, automat
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
 # Data Overview
-The pipeline begins with reading raw data in `Portfolio_Raw.xlsx`, which contains daily recommendations in "port" sheet and VNINDEX's daily-closed point. Pandas package is used to read data, calculate each recommendation's return then aggregate to the monthly performance compared to the benchmark VNINDEX in monthly and year-to-date basis. The volatility of performance in report month and Top 5 outstanding stocks are also highlighted. Then some data-manipulation functions such as OFFSET, INDEX, MATCH are used to show key metrics on Report Page. Finally, the Report Page is well-design to readily generate to a final report in pdf format.
+The whole process only uses the raw data in `Portfolio_raw.xlsx`, which contains 2 sheets: `port` and `vni`.
 
-The pipeline aggregates high-quality market intelligence from Vietnam’s most prestigious financial and real estate e-magazines, including CafeF.vn, Vietstock.vn, and Batdongsan.com.vn.
+1. **Portfolio Data:** Containing daily stock recommendations to buy, including:
+      * "Recommend_Date": datetime
+      * "Ticker": string
+      * "Price" (the stock price on Recommend_Date"): decimal
+      * "Buy_Range_1", "Buy_Range_2" (the optimal price range for position opening): decimal
+      * "Target_1", "Target_2", "Cutloss" (the price where investors should take profit or cut loss): decimal
+      * "Open_Date" (when the positions are opened): datetime
+      * "Close_Date" (when the positions are closed): datetime
+      * "Open_Price" (the actual stock price investor may buy): decimal
+      * "Close_Price" (the actual stock price investor may sell): decimal
 
-1. **Comprehensive Metadata Extraction:**
-For every captured article, the workflow extracts a structured dataset to ensure full traceability:
-    * Source Attribution: Originating publisher.
-    * Metadata: Article Title and a concise Summary.
-    * Direct Access: Original Source URL for deep-dive reading.
-    * Temporal Tracking: Exact Published Time to maintain chronological relevance.
-
-2. **Intelligent Keyword-based Filtering:**
-To maintain the news content exactly, the script implements a strict Boolean filtering logic. An article is only processed if its title contains at least one industry-specific keyword:
-    * Real Estate Sector: Targeted via terms such as "Nhà ở" (Housing), "Dự án" (Projects).
-    * Construction Materials: Filtered by strategic keywords like "Thép" (Steel) and "Vật liệu xây dựng" (Construction Materials).
-
+2. **Benchmark data:** Including VNINDEX daily-closed price
+     
 # Project Structure
 ``` text
 ├── data/
@@ -41,7 +40,7 @@ To maintain the news content exactly, the script implements a strict Boolean fil
 ```
 
 # Project Steps
-1. The pipeline starts with extracting raw data from Portfolio_Raw.xlsx, including daily stock recommendations in the port sheet and the daily closing level of VNINDEX.
+1. The pipeline starts with extracting raw data from `Portfolio_Raw.xlsx`, including daily stock recommendations in the port sheet and the daily closing level of VNINDEX.
   
 2. Python pandas is used to calculate individual recommendation returns and consolidate them into monthly and year-to-date portfolio performance versus the VNINDEX benchmark. The output also captures monthly performance volatility and the top 5 outperforming stocks.
   
