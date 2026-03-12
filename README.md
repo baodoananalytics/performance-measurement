@@ -2,7 +2,7 @@
 Automated Portfolio Performance Measurement Report conducted by the combinations of Python and Excel.
 
 # Overview
-Developed an automated news aggregation workflow to provide daily updates on the Vietnamese Real Estate and Construction Materials sectors. The pipeline utilizes Requests and BeautifulSoup for web scraping (source, title, URL, summary), Pandas for structured data management in Excel, and Power Automate to trigger automated delivery to chatbox platforms.
+This project supports the investment advisory team in generating timely, automated monthly portfolio performance reports. Raw data is cleaned and transformed into key metrics using Python, then combined with VNINDEX as the benchmark. The processed data is loaded into an Excel workbook, where OFFSET, INDEX, and MATCH functions are used to dynamically populate the report page. By simply changing the input period, users can instantly view the report for any historical month. The final output is a fully completed, well-designed A4-sized report created entirely in Excel.
 
 # Technologies Used
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
