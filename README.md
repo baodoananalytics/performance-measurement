@@ -1,4 +1,4 @@
-# Automated Portfolio Performance Measurement Report
+# Portfolio Performance Measurement Report
 Automated Portfolio Performance Measurement Report conducted by the combinations of Python and Excel.
 
 # Overview
@@ -28,14 +28,14 @@ To maintain the news content exactly, the script implements a strict Boolean fil
 ``` text
 ├── data/
 │   ├── Portfolio_Raw.xlsx
-│   ├── Portfolio_Raw.xlsx
+│   ├── Report_Template.xlsx
 ├── code/
 │   └── main.py
 │   └── hardcode.py
 ├── demo/
-│   ├── notifications_screenshot.png
+│   ├── Report_Sample.pdf
 ├── LICENSE
-└── README.md                    # Project documentation
+└── README.md
 ```
 
 # Project Steps
