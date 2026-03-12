@@ -46,7 +46,7 @@ The whole process only uses the raw data in `Portfolio_raw.xlsx`, which contains
   
 3. Key metrics are then displayed dynamically on the Report Page using Excel functions such as OFFSET, INDEX, and MATCH.
   
-4. The final Report Page is fully formatted and ready for PDF export.
+4. The final Report Page is fully formatted and ready for PDF export (e.g., `Report_Sample.pdf`)
 
 ---
 # Scale up
